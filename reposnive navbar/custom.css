@@ -1,0 +1,200 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@200;300&display=swap');
+body{
+    font-family: 'Geologica', sans-serif;
+    
+}
+:root{
+    --bg-color:#161716;
+    --secondbg-color:#202120;
+    --text-color:#afb3af;
+}
+a{
+    text-decoration: none;
+
+}
+ ul{
+    list-style: none;
+ }
+ /* reuseable cs classs  */
+
+ .container{
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+
+ }
+ header{
+    height: 50px;
+    background-color: var(--bg-color);
+ }
+  .nav_logo,
+  .nav_close,
+  .nav_burger{
+    margin-top: 15px;
+    color:white;
+  }
+  .nav__data{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+.nav_logo{
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    font-size: .75rem;
+    font-weight: 400;
+}
+.nav_logo i{
+    font-weight: initial;
+    font-size: 1.5rem;
+}
+ .nav_toggle{
+    margin-top: 10px;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  
+}
+.nav_burger,
+.nav_close{
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor:pointer;
+    transition: opacity .1s,transform .4s;
+}
+.nav_close{
+    display: none;
+} 
+
+@media screen and (max-width:1118px) {
+   .navmenu{
+    position: absolute;
+    width: 100%; 
+    left: 0;
+    top: 2.5rem;
+    height:calc(100vh - 3.5rem);
+    background-color: grey;
+    overflow:auto;
+    pointer-events: auto;
+    display: none; 
+    transition: top.4s, opacity .3s;
+   }
+   .navmenu::-webkit-scrollbar{
+    width:0;
+
+   }
+   .nav_lists{
+    background-color: var(--bg-color);
+    padding-top:30px
+   }
+}
+.navlinks{
+  color: white;
+  font-weight: 300px;
+  padding :1rem 2rem;
+  display:flex;
+  justify-content: space-between;
+}
+.navlinks:hover{
+     
+      opacity: .3;
+}
+.showmenu{
+  display:inline-block;
+  top :2.5rem;
+  pointer-events: initial;
+}
+.showicon .nav_burger{
+  display:none;
+  transform: rotate(90deg);
+}
+.showicon .nav_close{
+  display: block;
+  transform: rotate(90deg);
+}
+@media screen and (min-width:1118px) {
+  .nav_toggle{
+    display: none;
+  }
+  .container{
+    margin-inline: auto;
+  }
+  nav{
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav_lists{
+    height: 100%;
+    display: flex;
+    column-gap:2rem;
+  }
+  .navlinks{
+    /* height: 100%; */
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+    margin-top: 20px;
+  }
+  .nav__data{
+    margin-left: -100px;
+  }
+  .dropdown_list{
+    position: initial;
+    margin-left: -10px;
+  }
+  .navmenu{
+    margin-right: -80px;
+  }
+ 
+ 
+
+}
+.dropdown_arrow{
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: transfrom .4s;
+}
+.dropdown_links{
+  padding:1rem 1rem 1rem 2rem;
+  color:white;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  background-color:var(--secondbg-color) ;
+  
+}
+.dropdown_links:hover{
+  background-color: var(--bg-color);
+}
+.dropdown_list{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-in-out;
+
+}
+
+/* show dropdown menu */
+.dropdown_item:hover .dropdown_list{
+
+max-height: 1000px;
+transition: max-height .4s ease-in;
+}
+.dropdown_item:hover .dropdown_arrow{
+  transform: rotate(180deg) ;
+}
+
+
+
